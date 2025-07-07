@@ -1,21 +1,30 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import AddMovie from './pages/AddMovie';
-import MovieDetails from './pages/MovieDetails';
-import Home from "./pages/Home"
+import MovieDetail from './pages/MovieDetail';
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/add" element={<AddMovie />} />
-        <Route path="/movie/:id" element={<MovieDetails />} />
-      </Routes>
+    <div className="bg-[#F8F5FF]">
+      <Navbar />
+      <main className="px-4 py-6 max-w-6xl mx-auto">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add-movie" element={<AddMovie />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route
+            path="*"
+            element={
+              <div className="text-center text-red-600 text-2xl mt-10">
+                404 - Page Not Found
+              </div>
+            }
+          />
+        </Routes>
+      </main>
+    </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;

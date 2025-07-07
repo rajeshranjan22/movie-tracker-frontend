@@ -1,3 +1,5 @@
-export default function Spinner() {
-    return <div className="text-center text-xl animate-pulse">Loading...</div>;
-}
+const Spinner = () => (
+  <div className="text-center text-blue-500">Loading...</div>
+);
+
+export default Spinner;
